@@ -1,1 +1,1 @@
-# PersonalCS
+# Personal Computer Science
