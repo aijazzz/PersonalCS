@@ -1,6 +1,11 @@
 
 public class UniversalTables {
 
+	/**
+	 * 
+	 * @param x number for which table has to be printed
+	 * @param times how many times the table should go
+	 */
 	public static void tables(int x, int times) {
 		System.out.println("Table of " + x);
 		for (int i = 1; i <= times; i++) {
