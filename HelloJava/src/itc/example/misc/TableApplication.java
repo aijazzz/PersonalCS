@@ -78,11 +78,14 @@ public class TableApplication {
 				System.out.println("Wrong! "+ table + " x " + multiplier + " is " + table*multiplier);
 			}
 		}
-		
 	}
 
 	public static void testTables() {
 		// TODO
+		a x b = ?
+		a = getRandom();
+		b = getRandom();
+		
 		System.out.println("More testing...");
 	}
 
