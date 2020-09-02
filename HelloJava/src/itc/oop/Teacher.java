@@ -10,4 +10,47 @@ public class Teacher {
 	private String name;
 	private Course course;
 	private Schedule officeHours;
+	
+	/**
+	 * Constructor
+	 * @param name
+	 * @param course
+	 * @param officeHours
+	 */
+	public Teacher(String name, Course course, Schedule officeHours) {
+		this.name = name;
+		this.course = course;
+		this.officeHours = officeHours;
+	}
+	
+	/**
+	 * Get list of students who are taought by this teacher
+	 * @return
+	 */
+	public Student[] getStudents() {
+		Student[] students = null;
+		if (course != null) {
+			students = course.getStudents();
+		}
+		return students;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Course getCourse() {
+		return course;
+	}
+	public void setCourse(Course course) {
+		this.course = course;
+	}
+	public Schedule getOfficeHours() {
+		return officeHours;
+	}
+	public void setOfficeHours(Schedule officeHours) {
+		this.officeHours = officeHours;
+	}
 }
