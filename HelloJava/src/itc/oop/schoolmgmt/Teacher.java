@@ -1,4 +1,4 @@
-package itc.oop;
+package itc.oop.schoolmgmt;
 
 /*
  * A teacher can teach one course and manages a default schedule

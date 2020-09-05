@@ -1,4 +1,4 @@
-package itc.oop;
+package itc.oop.schoolmgmt;
 
 public class Course {
 	private String name;
