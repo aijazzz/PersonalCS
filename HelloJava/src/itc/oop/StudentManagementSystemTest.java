@@ -44,9 +44,16 @@ public class StudentManagementSystemTest {
 		School.addCourse(physics);
 		School.addCourse(urdu);
 		
+		School.addTeacher(t1);
+		School.addTeacher(t2);
+		
 		School.admitStudent(s1);
 		School.admitStudent(s2);
 		School.admitStudent(s3);
+		
+//		School.enrollCourse(s1, maths);
+//		School.enrollCourse(s1, physics);
+//		School.enrollCourse(s1, urdu);
 		
 		// print student information
 		System.out.println(s1.getStudentInfo());

@@ -12,6 +12,11 @@ public class School {
 	// List of courses in school and their count
 	private static Course[] courses = new Course[5];
 	private static int courseCount = 0;
+	
+	// List of teachers in school and their count
+	private static Teacher[] teachers = new Teacher[5];
+	private static int teacherCount = 0;
+	
 		
 	/**
 	 * Add a new student to school
@@ -32,7 +37,15 @@ public class School {
 		if (courseCount < 5) {
 			courses[courseCount++] = course;
 		} else {
-			System.out.println("Error: Max 5 course allowed.");
+			System.out.println("Error: Max 5 courses allowed.");
+		}
+	}
+
+	public static void addTeacher(Teacher teacher) {
+		if (teacherCount < 5) {
+			teachers[teacherCount++] = teacher;
+		} else {
+			System.out.println("Error: Max 5 teachers allowed.");
 		}
 	}
 
@@ -43,8 +56,8 @@ public class School {
 	 */
 	public static void enrollCourse(Student student, Course course) {
 		if (student != null && course != null) {
-			Course[] courses = student.getCourses();
-			if (courses != null && courses.length < 5) {
+			// BUGFIXED
+			if (student.getCourseEnrolled() < 5) {
 				student.addCourse(course);
 				course.addStudent(student);
 			}

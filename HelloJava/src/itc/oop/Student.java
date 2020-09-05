@@ -13,7 +13,12 @@ public class Student {
 	}
 	public Student(String name, int number, Course[] courses) {
 		this(name, number);
-		this.courses = courses;
+		if (courses != null && courses.length != 0 && courses.length < 5) {
+			for (int i = 0; i < courses.length; i++ ) {
+				this.courses[i] = courses[i];
+			}
+			this.courseEnrolled = courses.length;
+		}
 	}
 	
 	/**
@@ -34,14 +39,19 @@ public class Student {
 		}
 	}
 	
+
+	/*
+	 * Update implementation
+	 */
 	public String getStudentInfo() {
 		String sInfo = "";
-		sInfo = sInfo + this.name + "\n"; 
-		sInfo = sInfo + this.number + "\n";
+		sInfo = sInfo + "Name: " + this.name + "\t"; 
+		sInfo = sInfo + "Roll Number: " + this.number + "\n";
 		
 		for (int i =0; i < this.courseEnrolled ; i++) {
 			sInfo = sInfo + "Course " + (i+1) + ": " + this.courses[i].getName() + "\n";
 		}
+		sInfo = sInfo + "------------------";
 		return sInfo;
 	}
 	
@@ -69,4 +79,11 @@ public class Student {
 	public void setGrades(int[] grades) {
 		this.grades = grades;
 	}
+	public int getCourseEnrolled() {
+		return courseEnrolled;
+	}
+	public void setCourseEnrolled(int courseEnrolled) {
+		this.courseEnrolled = courseEnrolled;
+	}
+	
 }
