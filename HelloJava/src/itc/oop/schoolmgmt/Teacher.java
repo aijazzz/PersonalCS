@@ -23,6 +23,18 @@ public class Teacher {
 		this.officeHours = officeHours;
 	}
 	
+	public String getTeacherInfo() {
+		StringBuffer tInfo = new StringBuffer("Teacher Info:");
+		tInfo.append("\nName: ");
+		tInfo.append(this.name);
+		tInfo.append("\tCourse: ");
+		tInfo.append(this.course.getName());
+		tInfo.append("\n");
+		tInfo.append(this.officeHours.getScheduleInfo());
+		tInfo.append("-----------------");
+		return tInfo.toString();
+	}
+
 	/**
 	 * Get list of students who are taought by this teacher
 	 * @return

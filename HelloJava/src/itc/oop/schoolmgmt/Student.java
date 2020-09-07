@@ -44,7 +44,7 @@ public class Student {
 	 * Update implementation
 	 */
 	public String getStudentInfo() {
-		String sInfo = "";
+		String sInfo = "Student Information\n";
 		sInfo = sInfo + "Name: " + this.name + "\t"; 
 		sInfo = sInfo + "Roll Number: " + this.number + "\n";
 		

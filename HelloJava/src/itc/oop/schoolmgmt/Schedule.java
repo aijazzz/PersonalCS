@@ -29,7 +29,7 @@ public class Schedule {
 	}
 	// Monday at 10 for 2 hrs
 	// Wednesday at 10 for 1 hrs
-	public String getSchedule() {
+	public String getScheduleInfo() {
 		String schedule = "";
 		for (int i =0; i < this.days.length; i++) {
 			schedule = schedule.concat(this.days[i] + " at " + this.time[i] + 
@@ -40,6 +40,6 @@ public class Schedule {
 	
 	public static void main(String[] args) {
 		Schedule schedule = new Schedule();
-		System.out.println(schedule.getSchedule());
+		System.out.println(schedule.getScheduleInfo());
 	}
 }

@@ -17,7 +17,12 @@ public class School {
 	private static Teacher[] teachers = new Teacher[5];
 	private static int teacherCount = 0;
 	
-		
+
+	public static void printStudentList() {
+		for (int i = 0; i < studentCount; i++) {
+			System.out.println(students[i].getStudentInfo());
+		}
+	}
 	/**
 	 * Add a new student to school
 	 * @param student

@@ -51,15 +51,17 @@ public class StudentManagementSystemTest {
 		School.admitStudent(s2);
 		School.admitStudent(s3);
 		
-//		School.enrollCourse(s1, maths);
-//		School.enrollCourse(s1, physics);
-//		School.enrollCourse(s1, urdu);
-		
 		// print student information
 		System.out.println(s1.getStudentInfo());
 		System.out.println(s2.getStudentInfo());
 		System.out.println(s3.getStudentInfo());
 		
+		System.out.println(t1.getTeacherInfo());
+		System.out.println(t2.getTeacherInfo());
+
+		System.out.println(physics.getCourseInfo());
+		System.out.println(maths.getCourseInfo());
+		System.out.println(urdu.getCourseInfo());
 	}
 	
 

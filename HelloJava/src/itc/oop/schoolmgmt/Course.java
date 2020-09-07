@@ -19,6 +19,19 @@ public class Course {
 		this(name, creditHours);
 		this.schedule = schedule;
 	}
+	
+	public String getCourseInfo() {
+		StringBuffer cInfo = new StringBuffer("Course Info:");
+		cInfo.append("\nName: ");
+		cInfo.append(this.name);
+		cInfo.append("\tCredit hours: ");
+		cInfo.append(this.creditHours);
+		cInfo.append("\n");
+		cInfo.append(this.schedule.getScheduleInfo());
+		cInfo.append("-----------------");
+		return cInfo.toString();
+	}
+
 
 	/**
 	 * Add student to this course
