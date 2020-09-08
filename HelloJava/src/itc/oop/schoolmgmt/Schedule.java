@@ -1,5 +1,7 @@
 package itc.oop.schoolmgmt;
 
+import java.util.Scanner;
+
 public class Schedule {
 	private String[] days;
 	private int[] time;
@@ -27,6 +29,37 @@ public class Schedule {
 		this.time = time;
 		this.duration = duration;
 	}
+	
+	/**
+	 * This function assumes a schedule always have two sessions
+	 * @param scanner
+	 * @return
+	 */
+	public static Schedule createASchedule(Scanner scanner) {
+		System.out.println("\nEnter first entry for schedule: ");
+		System.out.println("\nDay: ");
+		String firstDay = scanner.next();
+		System.out.println("\nTime: ");
+		int firstTime = scanner.nextInt();
+		System.out.println("\nDuration: ");
+		int firstDuration = scanner.nextInt();
+		
+		System.out.println("\nEnter second entry for schedule: ");
+		System.out.println("\nDay: ");
+		String secondDay = scanner.next();
+		System.out.println("\nTime: ");
+		int secondTime = scanner.nextInt();
+		System.out.println("\nDuration: ");
+		int secondDuration = scanner.nextInt();
+		
+		String[] days = new String[]{firstDay, secondDay};
+		int[] times = new int[] {firstTime, secondTime};
+		int[] durations = new int[] {firstDuration, secondDuration};
+		
+		Schedule schedule = new Schedule(days, times, durations);
+		return schedule;
+	}
+	
 	// Monday at 10 for 2 hrs
 	// Wednesday at 10 for 1 hrs
 	public String getScheduleInfo() {

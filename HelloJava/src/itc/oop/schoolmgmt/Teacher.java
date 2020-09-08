@@ -1,5 +1,7 @@
 package itc.oop.schoolmgmt;
 
+import java.util.Scanner;
+
 /*
  * A teacher can teach one course and manages a default schedule
  * Teacher name: Muzammil
@@ -21,6 +23,20 @@ public class Teacher {
 		this.name = name;
 		this.course = course;
 		this.officeHours = officeHours;
+	}
+	
+	public static Teacher createATeacher(Scanner scanner) {
+		System.out.println("\nEnter name of the teacher: ");
+		String name = scanner.next();
+		System.out.println("\nEnter course: ");
+		String courseName = scanner.next();
+		Course cour = School.findCourse(courseName);
+		
+		Schedule sched = Schedule.createASchedule(scanner);
+		
+		Teacher t = new Teacher(name, cour, sched);
+		
+		return t;
 	}
 	
 	public String getTeacherInfo() {

@@ -60,6 +60,7 @@ public class StudentManagementSystemTest {
 		System.out.println(t2.getTeacherInfo());
 
 		System.out.println(physics.getCourseInfo());
+		System.out.println(physics);
 		System.out.println(maths.getCourseInfo());
 		System.out.println(urdu.getCourseInfo());
 	}

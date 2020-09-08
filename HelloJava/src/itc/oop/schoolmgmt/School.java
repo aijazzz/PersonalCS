@@ -23,6 +23,35 @@ public class School {
 			System.out.println(students[i].getStudentInfo());
 		}
 	}
+	public static void printCourseList() {
+		for (int i = 0; i < courseCount; i++) {
+			System.out.println(courses[i].getCourseInfo());
+		}
+	}
+	public static void printTeacherList() {
+		for (int i = 0; i < teacherCount; i++) {
+			System.out.println(teachers[i].getTeacherInfo());
+		}
+	}
+	
+	/**
+	 * Finds course based on the name of the course
+	 * @param name
+	 * @return
+	 */
+	public static Course findCourse(String name) {
+		Course result = null;
+		if (name != null && !name.equals("")) {
+			for (int i = 0; i < courseCount; i++) {
+				Course currentCourse = courses[i]; 
+				if (name.equals(currentCourse.getName())) {
+					result = currentCourse;
+				}
+			}
+		}
+		return result;
+	}
+	
 	/**
 	 * Add a new student to school
 	 * @param student

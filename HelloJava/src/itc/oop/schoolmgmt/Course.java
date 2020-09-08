@@ -1,5 +1,7 @@
 package itc.oop.schoolmgmt;
 
+import java.util.Scanner;
+
 public class Course {
 	private String name;
 	private float creditHours;
@@ -20,6 +22,26 @@ public class Course {
 		this.schedule = schedule;
 	}
 	
+	public static Course createACourse(Scanner scanner) {
+		Course course = null;
+		
+		System.out.println("\nEnter course name: "); 
+		String name = scanner.nextLine();
+		System.out.println("\nEnter course credit hours: "); 
+		float ch = scanner.nextFloat();
+		System.out.println("\nIs schedule decided? (y/n): ");
+		String sch = scanner.next();
+		
+		if (sch.equals("y")) {
+			Schedule schedule = Schedule.createASchedule(scanner);
+			course = new Course(name, ch, schedule);
+		} else {
+			course = new Course(name, ch);	
+		}
+		
+		return course;
+	}
+	
 	public String getCourseInfo() {
 		StringBuffer cInfo = new StringBuffer("Course Info:");
 		cInfo.append("\nName: ");
@@ -27,11 +49,18 @@ public class Course {
 		cInfo.append("\tCredit hours: ");
 		cInfo.append(this.creditHours);
 		cInfo.append("\n");
-		cInfo.append(this.schedule.getScheduleInfo());
+		if (this.schedule != null) {
+			cInfo.append(this.schedule.getScheduleInfo());
+		}
 		cInfo.append("-----------------");
 		return cInfo.toString();
 	}
 
+
+	@Override
+	public String toString() {
+		return this.getCourseInfo();
+	}
 
 	/**
 	 * Add student to this course

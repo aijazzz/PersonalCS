@@ -1,5 +1,7 @@
 package itc.oop.schoolmgmt;
 
+import java.util.Scanner;
+
 public class Student {
 	private String name;
 	private Course[] courses = new Course[5];
@@ -39,6 +41,15 @@ public class Student {
 		}
 	}
 	
+	public static Student createNewStudent(Scanner scanner) {
+		System.out.println("\nEnter student's name: "); 
+		String name = scanner.nextLine();
+		System.out.println("\nEnter student's roll number: "); 
+		int number = scanner.nextInt();
+
+		Student student = new Student(name, number);
+		return student;
+	}
 
 	/*
 	 * Update implementation
