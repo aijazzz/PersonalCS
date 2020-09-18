@@ -1,5 +1,7 @@
 package itc.oop.schoolmgmt;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Schedule {
@@ -30,6 +32,19 @@ public class Schedule {
 		this.duration = duration;
 	}
 	
+	public void saveTheData(FileWriter writer) throws IOException {
+		if (days != null && days.length > 0) {			
+			for (int i = 0; i < days.length; i++) {
+				writer.write(days[i]);
+				writer.write("\n");
+				writer.write(new Integer(time[i]).toString());
+				writer.write("\n");
+				writer.write(new Integer(duration[i]).toString());
+				writer.write("\n");
+			}		
+		}
+	}
+
 	/**
 	 * This function assumes a schedule always have two sessions
 	 * @param scanner

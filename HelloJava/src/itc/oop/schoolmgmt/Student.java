@@ -1,5 +1,7 @@
 package itc.oop.schoolmgmt;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Student {
@@ -64,6 +66,23 @@ public class Student {
 		}
 		sInfo = sInfo + "------------------";
 		return sInfo;
+	}
+	
+	public void saveTheData(FileWriter writer) throws IOException {
+		// TODO: save name, number, courses, courseEnrolled and grades
+
+		writer.write(this.name);
+		writer.write("\n");
+		
+		writer.write(new Integer(this.number).toString());
+		writer.write("\n");
+
+		writer.write(new Integer(this.courseEnrolled).toString());
+		writer.write("\n");
+		
+		for (int i = 0; i < courseEnrolled; i++) {
+			writer.write(courses[i].getName() + "\n");
+		}
 	}
 	
 	public String getName() {

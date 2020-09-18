@@ -37,7 +37,10 @@ public class SchoolManagementSystemPro {
 		School.addTeacher(teacher);
 	}
 	
-	public static void main(String[] args) {	
+	public static void main(String[] args) {
+		
+		// TODO: Load the data
+		
 		int command = menu();
 		while (command != 0) {
 			if (command == 1) {
@@ -55,6 +58,8 @@ public class SchoolManagementSystemPro {
 			}
 			command = menu();
 		}
+
+		School.saveTheData();
 	}
 
 }

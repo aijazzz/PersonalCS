@@ -1,5 +1,9 @@
 package itc.oop.schoolmgmt;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class School {
 
 	// name of the school
@@ -17,6 +21,7 @@ public class School {
 	private static Teacher[] teachers = new Teacher[5];
 	private static int teacherCount = 0;
 	
+	private static String fileStore = "school-mgmt-sys-data.txt";
 
 	public static void printStudentList() {
 		for (int i = 0; i < studentCount; i++) {
@@ -99,4 +104,41 @@ public class School {
 			System.out.println("Error: Student or Course cannot be NULL.");
 		}
 	}
+	
+	public static void saveTheData() {
+		try {
+		// TODO: save name, students, courses, teachers and their respective counts
+		
+			File file = new File(School.fileStore);
+		
+			FileWriter writer = new FileWriter(file);
+						
+			writer.write(School.name);
+			writer.write("\n");
+			
+			writer.write(new Integer(School.studentCount).toString()); // FIXME
+			writer.write("\n");
+			for (int i = 0; i < studentCount; i++) {
+				students[i].saveTheData(writer);
+			}
+			
+			writer.write(new Integer(School.courseCount).toString());
+			writer.write("\n");
+			for (int i = 0; i < courseCount; i++) {
+				courses[i].saveTheData(writer);
+			}
+
+			writer.write(School.teacherCount);
+			writer.write("\n");
+			for (int i = 0; i < teacherCount; i++) {
+				teachers[i].saveTheData(writer);
+			}
+
+			writer.close();
+			
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+	
 }

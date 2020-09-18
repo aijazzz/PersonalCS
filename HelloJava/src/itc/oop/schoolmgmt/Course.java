@@ -1,5 +1,7 @@
 package itc.oop.schoolmgmt;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Course {
@@ -56,6 +58,22 @@ public class Course {
 		return cInfo.toString();
 	}
 
+	public void saveTheData(FileWriter writer) throws IOException {
+		
+		writer.write(this.name);
+		writer.write("\n");
+		
+		writer.write(new Float(this.creditHours).toString());
+		writer.write("\n");
+
+		if (this.schedule != null) {
+			writer.write("y\n");
+			this.schedule.saveTheData(writer);
+		} else {
+			writer.write("n\n");			
+		}
+
+	}
 
 	@Override
 	public String toString() {

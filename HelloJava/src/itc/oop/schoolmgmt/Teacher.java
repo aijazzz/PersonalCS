@@ -1,5 +1,6 @@
 package itc.oop.schoolmgmt;
 
+import java.io.FileWriter;
 import java.util.Scanner;
 
 /*
@@ -50,6 +51,11 @@ public class Teacher {
 		tInfo.append("-----------------");
 		return tInfo.toString();
 	}
+
+	public void saveTheData(FileWriter writer) {
+		//TODO: save the data 
+	}
+
 
 	/**
 	 * Get list of students who are taought by this teacher
